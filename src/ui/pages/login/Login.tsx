@@ -1,4 +1,4 @@
-import react from 'react';
+import react, { FormEvent } from 'react';
 import './Login.css';
 import bg from '../../../assets/vectors/home-bg.svg';
 import { Link } from 'react-router-dom';
@@ -16,11 +16,17 @@ export default function Login() {
                     <h1 className='home-title'>Welcome</h1>
                     <h6 className='home-subtitle'>Let's log you in quickly</h6>
                 </div>
-                <form className='column auth-form' action="" method="post">
+                <form onSubmit={submitForm} className='column auth-form' action="" method="post">
                     <input type="email" name='email' placeholder='Enter your email' />
                     <input type="password" name='password' placeholder='Enter password' />
                     <div className="row-responsive space-between submit-div">
-                        <button className='form-button' type="submit" value="SUBMIT">LOGIN</button>
+                    <button className='form-button' type="submit" value="SUBMIT">
+                            <Link className='undecorated-text' to={RouteNames.TIMELINE}>
+                                <span>
+                                    LOGIN
+                                </span>
+                            </Link>
+                        </button>
                         <p className='white-text'>
                             don't have an account?
                             <br/><Link className='undecorated-text' to={RouteNames.REGISTER}>
@@ -34,4 +40,8 @@ export default function Login() {
             </main>
         </div>
     )
+}
+
+function submitForm(event: FormEvent) {
+    event.preventDefault();
 }
