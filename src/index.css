@@ -4,6 +4,7 @@
   --color-white: #FFFFFF;
   --color-pale-text: #A5A5A5;
   --color-red-fill: #FF5E5B;
+  --color-black: #000000;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -131,6 +132,7 @@ input {
 
 .undecorated-text {
   text-decoration: none;
+  color: var(--color-black);
 }
 
 .welcome-title {

@@ -1,6 +1,8 @@
 const RouteNames = {
-    REGISTER: '/',
     LOGIN: '/login',
-}
+    POST: '/post',
+    REGISTER: '/',
+    TIMELINE: '/timeline',
+};
 
 export default RouteNames;
