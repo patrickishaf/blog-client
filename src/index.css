@@ -128,13 +128,17 @@ input {
 
 }
 
+.undecorated-text {
+  text-decoration: none;
+}
+
 .welcome-title {
   color: var(--color-white);
   font-size: 4rem;
   font-weight: 700;
   line-height: 5rem;
   position: relative;
-  bottom: 70vh;
+  bottom: 75vh;
   right: 2vh;
   transform: rotate(270deg);
 }
