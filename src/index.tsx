@@ -16,7 +16,7 @@ root.render(
       <Routes>
         <Route path={RouteNames.REGISTER} element={<SignUp/>} />
         <Route path={RouteNames.LOGIN} element={<Login/>} />
-        <Route path={RouteNames.LOGIN} element={<Timeline/>} />
+        <Route path={RouteNames.TIMELINE} element={<Timeline/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
