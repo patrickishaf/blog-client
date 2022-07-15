@@ -3,10 +3,12 @@ import './SignUp.css';
 import bg from '../../../assets/vectors/home-bg.svg';
 import { Link } from 'react-router-dom';
 import RouteNames from '../../../core/utils/route-names';
+import Notification from '../../atoms/notification/Notification';
 
 export default function SignUp() {
     return (
         <div id='sign-up-root' className='row'>
+            <Notification type='success' title='success' subtitle='You can log in now' />
             <aside className='welcome-img-container'>
                 <img className='welcome-bg' src={bg} alt="welcome background" />
                 <h1 className='welcome-title'>Sign Up</h1>

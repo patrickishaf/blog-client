@@ -1,0 +1,24 @@
+.notification-root {
+    position: fixed;
+    right: 5.7vw;
+    top: 6.1vh;
+    padding: 2.7vh 1.9vw 2.7vh 2vw;
+    width: 28vw;
+    display: none;
+}
+
+.notification-subtitle, .notification-title {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0;
+}
+
+@media only screen and (max-width: 425px) {
+    .notification-root {
+        left: 7.4vw;
+        right: 7.4vw;
+        top: 3.4vh;
+        padding: 1.3vh 7vw 1.3vh 5.3vw;
+        width: 73vw;
+    }
+}
