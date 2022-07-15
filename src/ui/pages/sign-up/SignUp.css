@@ -1,0 +1,14 @@
+#sign-up-root {
+    width: 100vw;
+    height: 100vh;
+}
+
+.welcome-img-container {
+    height: 100vh;
+    width: 32vw;
+}
+
+.welcome-bg {
+    height: 100vh;
+    width: 32vw;
+}
