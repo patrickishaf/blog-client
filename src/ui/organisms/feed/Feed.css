@@ -1,0 +1,30 @@
+.category {
+    width: 4.7vw;
+    align-items: center;
+    margin-bottom: 4.5vh;
+}
+
+.category-text {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+}
+
+.feed-root {
+    padding: 9.7vh 12vw 8.3vh 4.1vw;
+}
+
+.green-bar {
+    background-color: var(--color-green-fill);
+    height: 0.5vh;
+    width: 1.5vw;
+    margin-bottom: 0.5vh;
+}
+
+@media only screen and (max-width: 452px) {
+    .feed-root {
+        border: solid 1px yellow;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

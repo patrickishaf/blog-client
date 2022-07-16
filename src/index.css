@@ -9,7 +9,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*,** {
+*{
   margin: 0;
   box-sizing: border-box;
 }
@@ -84,6 +84,7 @@ code {
   color: var(--color-pale-text);
   font-weight: 300;
   margin-top: 0;
+  margin-bottom: 6.1vh;
 }
 
 .home-main {
@@ -125,9 +126,7 @@ input {
   width: auto;
   margin-left: 0;
   padding-right: 0;
-  display: flex;
-  flex-direction: row;
-
+  align-items: center;
 }
 
 .undecorated-text {
@@ -151,6 +150,11 @@ input {
 }
 
 @media only screen and (max-width: 425px) {
+
+  .desktop-only {
+    display: none;
+  }
+
   .form-button {
     align-self: flex-start;
     padding: 1.7vh 8.8vw;
@@ -169,6 +173,10 @@ input {
   .row-responsive {
     display: flex;
     flex-direction: column;
+  }
+
+  .submit-div {
+    align-items: flex-start;
   }
 
   .welcome-img-container {

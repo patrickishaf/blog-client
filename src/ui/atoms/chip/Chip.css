@@ -1,0 +1,18 @@
+.chip-root {
+    border: solid 1px var(--color-green-fill);
+    border-radius: 100px;
+    padding: 0.87vh 1.4vw;
+    margin-right: 1.2vw;
+}
+
+.chip-text {
+    color: var(--color-green-fill);
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 452px) {
+    .chip-root {
+        padding: 0.9vh 3.2vw 1.1vh 3vw;
+        margin-right: 5vw;
+    }
+}

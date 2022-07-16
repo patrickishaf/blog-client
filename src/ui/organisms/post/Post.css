@@ -1,0 +1,74 @@
+.chip-row {
+    margin-top: 1.6vh;
+}
+
+.date-container p{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: 0.5vh;
+    text-align: end;
+}
+
+.post {
+    margin-left: 1.3rem;
+}
+
+.post-author {
+    color: var(--color-pale-text);
+    font-size: 1rem;
+    margin-bottom: 2.6vh;
+    margin-top: 1.6vh;
+}
+
+.post-body {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+.post-root {
+    padding-top: 4.6vh;
+    padding-bottom: 4.6vh;
+}
+
+.post-root:hover {
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
+    cursor: pointer;
+}
+
+.post-title {
+    font-family: 'DM Serif Display';
+    color: var(--color-green-fill);
+    font-size: 2rem;
+    margin-bottom: 2.6vh;
+}
+
+@media only screen and (max-width: 452px) {
+    .chip-row {
+        margin-top: 2.3vh;
+    }
+
+    .date-author-row {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 2vh;
+    }
+
+    .optional-date-display {
+        display: none;
+    }
+
+    .post-author {
+    }
+
+    .post-root {
+        padding-right: 5vw;
+        margin: 0;
+        margin-top: 2vh;
+    }
+}
