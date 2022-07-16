@@ -1,4 +1,3 @@
-import react from 'react';
 import Chip from '../../atoms/chip/Chip';
 import './Post.css';
 

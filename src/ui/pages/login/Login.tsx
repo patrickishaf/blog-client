@@ -1,4 +1,4 @@
-import react, { FormEvent } from 'react';
+import { FormEvent } from 'react';
 import './Login.css';
 import bg from '../../../assets/vectors/home-bg.svg';
 import { Link } from 'react-router-dom';

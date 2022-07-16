@@ -1,4 +1,3 @@
-import react from 'react';
 import './Feed.css';
 import posts from '../../../core/data/posts';
 import Post from '../../organisms/post/Post';

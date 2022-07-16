@@ -1,4 +1,3 @@
-import react from 'react';
 import './NavDrawerItem.css';
 
 interface NavDrawerItemProps {

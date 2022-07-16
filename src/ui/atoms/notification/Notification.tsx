@@ -1,4 +1,3 @@
-import react from 'react';
 import './Notification.css';
 import bellIcon from '../../../assets/vectors/notification.svg';
 

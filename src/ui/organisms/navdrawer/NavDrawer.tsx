@@ -1,4 +1,3 @@
-import react from 'react';
 import NavDrawerItem from '../../molecules/navdrawer-item/NavDrawerItem';
 import './NavDrawer.css';
 import avatar from '../../../assets/vectors/avatar.svg';
