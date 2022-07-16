@@ -22,9 +22,23 @@
 }
 
 @media only screen and (max-width: 452px) {
+    .category {
+        width: unset;
+        align-items: center;
+        margin-bottom: 4.5vh;
+    }
+    
     .feed-root {
         border: solid 1px yellow;
         padding-left: 0;
         padding-right: 0;
+        padding-top: 8.7vh;
+    }
+
+    .green-bar {
+        background-color: var(--color-green-fill);
+        height: 0.5vh;
+        width: 4.6vw;
+        margin-bottom: 0.5vh;
     }
 }
