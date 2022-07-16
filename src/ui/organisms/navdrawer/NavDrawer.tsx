@@ -8,13 +8,19 @@ import addRounded from '../../../assets/vectors/add_rounded.svg';
 
 export default function NavDrawer() {
     return (
-        <aside className='drawer-root'>
-            <div className='drawer-child'>
+        <aside className='drawer-root column-responsive'>
+            <div className="inner">
                 <img className='avatar' src={avatar} alt="logged in user avatar" />
-                <NavDrawerItem iconPath={search} label='search' />
-                <NavDrawerItem iconPath={trending} label='trending' />
+                <div className="search">
+                    <NavDrawerItem iconPath={search} label='search' />
+                </div>
+                <div className="trending">
+                    <NavDrawerItem iconPath={trending} label='trending' />
+                </div>
+                <div className="create">
+                    <NavDrawerItem iconPath={addRounded} label='create' />
+                </div>
             </div>
-            <NavDrawerItem iconPath={addRounded} label='create' />
         </aside>
     )
 }

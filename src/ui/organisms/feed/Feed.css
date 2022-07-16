@@ -29,10 +29,10 @@
     }
     
     .feed-root {
-        border: solid 1px yellow;
         padding-left: 0;
         padding-right: 0;
         padding-top: 8.7vh;
+        margin-bottom: 8.7vh;
     }
 
     .green-bar {

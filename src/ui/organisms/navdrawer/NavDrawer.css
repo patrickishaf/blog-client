@@ -1,12 +1,9 @@
 .avatar {
-    margin-bottom: 5.7vh;
+    margin-bottom: 5.6vh;
 }
 
-.drawer-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 23vh;
+.create {
+    margin-top: 23vh;
 }
 
 .drawer-root {
@@ -15,10 +12,7 @@
     width: 8.5vw;
     display: flex;
     flex-direction: column;
-    padding-top: 13.6vh;
-    padding-bottom: 20vh;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 13.6vh 1.2vw 20vh 1.2vw;
     background-color: var(--color-bg);
     position: sticky;
     top: 0;
@@ -26,19 +20,16 @@
 
 @media only screen and (max-width: 452px) {
     .avatar {
+        height: 50px;
         margin: 0;
     }
 
     .drawer-root {
-        position: fixed;
-        left: 6.5vw;
-        bottom: 2vh;
-        width: 65vw;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        height: 7.2vh;
-        padding: 1.5vh 12vw 1.4vh 10vw;
+        border: none;
+    }
+
+    .create {
+        margin: 0;
     }
 
     .drawer-child {
@@ -47,5 +38,18 @@
         justify-content: space-between;
         margin: 0;
         width: 100%;
+    }
+
+    .inner {
+        position: fixed;
+        bottom: -2px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1.4vh 12.8vw;
+        background-color: var(--color-bg);
+        border-top: solid 1px grey;
     }
 }

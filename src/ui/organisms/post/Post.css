@@ -2,6 +2,10 @@
     margin-top: 1.6vh;
 }
 
+.date-author-row {
+    display: none;
+}
+
 .date-container p{
     font-size: 2rem;
     font-weight: 600;
@@ -61,9 +65,6 @@
 
     .optional-date-display {
         display: none;
-    }
-
-    .post-author {
     }
 
     .post-root {
