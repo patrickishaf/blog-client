@@ -1,0 +1,41 @@
+.bold-first-letter {
+    font-size: 4rem;
+    line-height: 4rem;
+}
+
+.postview-body {
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+.postview-metadata {
+    margin-top: 1.6vh;
+    margin-bottom: 4.4vh;
+    font-weight: 200;
+    font-size: 1.25rem;
+}
+
+.postview-root {
+    padding: 8.4vh 15.7vw;
+}
+
+.postview-title {
+    font-family: 'DM Serif Display';
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.7rem;
+    color: var(--color-green-fill);
+}
+
+@media only screen and (max-width: 452px) {
+    .postview-root {
+        padding: 5vh 12vw;
+    }
+
+    .postview-metadata {
+        margin-top: 3.7vh;
+        margin-bottom: 3.7vh;
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+}

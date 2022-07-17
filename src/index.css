@@ -69,6 +69,10 @@ code {
   color: var(--color-green-fill);
 }
 
+.grey-text {
+  color: var(--color-pale-text);
+}
+
 .home-title {
   font-family: 'DM Serif Display';
   font-size: 3rem;
