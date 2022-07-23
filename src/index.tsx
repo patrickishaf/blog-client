@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RouteNames from './core/utils/route-names';
 import './index.css';
+import CreatePost from './ui/pages/create-post/CreatePost';
 import Login from './ui/pages/login/Login';
 import PostView from './ui/pages/post-view/PostView';
 import SignUp from './ui/pages/sign-up/SignUp';
@@ -18,6 +19,7 @@ root.render(
       <Route path={RouteNames.LOGIN} element={<Login/>} />
       <Route path={RouteNames.TIMELINE} element={<Timeline/>} />
       <Route path={RouteNames.POST_VIEW} element={<PostView/>} />
+      <Route path={RouteNames.CREATE_POST} element={<CreatePost/>} />
     </Routes>
   </BrowserRouter>
 );

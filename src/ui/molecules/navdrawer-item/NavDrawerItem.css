@@ -11,6 +11,10 @@
     margin-top: 3.4vh;
 }
 
+.drawer-item-root:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 452px) {
     .drawer-item-label {
         display: none;

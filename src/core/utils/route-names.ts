@@ -4,6 +4,7 @@ const RouteNames = {
     REGISTER: '/',
     TIMELINE: '/timeline',
     POST_VIEW: '/postview',
+    CREATE_POST: '/createpost',
 };
 
 export default RouteNames;

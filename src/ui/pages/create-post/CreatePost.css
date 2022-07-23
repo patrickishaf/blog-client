@@ -1,0 +1,50 @@
+.create-post-avatar {
+    height: 4vh;
+}
+
+.create-post-body {
+    min-height: 70vh;
+    font-family: 'Lexend Deca';
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.create-post-form {
+    margin: 8.4vh 15.7vw;
+    color: white;
+}
+
+.create-post-navbar {
+    padding: 3vh 14vw;
+}
+
+.create-post-root {
+    height: 100vh;
+    width: 100vw;
+}
+
+.create-post-title {
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.create-post-title::placeholder {
+    font-size: 2rem;
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    font-family: 'Lexend Deca';
+}
+
+textarea::placeholder {
+    color: var(--color-pale-text);
+    font-family: 'Lexend Deca';
+}
+
+textarea::marker {
+    display: none;
+}
