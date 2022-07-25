@@ -112,6 +112,13 @@ input {
   font-weight: 300;
 }
 
+.input-error-text {
+  color: red;
+  position: relative;
+  bottom: 3vh;
+  font-size: 0.8rem;
+}
+
 .row {
   display: flex;
   flex-direction: row;

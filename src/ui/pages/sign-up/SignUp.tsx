@@ -6,34 +6,84 @@ import RouteNames from '../../../core/utils/route-names';
 import Notification from '../../atoms/notification/Notification';
 
 export default function SignUp() {
-    const [name, setName] = useState({});
-    const [email, setEmail] = useState({});
-    const [password, setPassword] = useState({});
-    const [data, setData] = useState({});
+    const minimumPasswordLength = 6;
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [secondPassword, setSecondPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState({});
+    const [nameError, setNameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const [secondPasswordError, setSecondPasswordError] = useState('');
+
+    function validateName(): boolean {
+        return name.length > 0;
+    }
+
+    function validateEmail(): boolean {
+        return email.includes('@') && email.includes('.');
+    }
+
+    function validatePassword(): boolean {
+        return password.length > minimumPasswordLength;
+    }
+
+    function ensurePasswordsMatch(): boolean {
+        return password === secondPassword;
+    }
+
+    function validateUserInput(): boolean {
+        if (validateName() && validateEmail() && validatePassword() && ensurePasswordsMatch()) {
+            setNameError('');
+            setEmailError('');
+            setPasswordError('');
+            setSecondPasswordError('');
+            return true;
+        }
+        if (!validateName()) {
+            setNameError('please enter your name');
+        }
+        if (!validateEmail()) {
+            setEmailError('please enter a valid email');
+        }
+        if (!validatePassword()) {
+            setPasswordError('your password mut be more than 6 letters')
+        }
+        if (!ensurePasswordsMatch()) {
+            setSecondPasswordError('passwords do not match');
+        }
+        return false;
+    }
 
     function submitForm(event: FormEvent) {
         event.preventDefault();
-        console.log('SENDING A GET REQUEST TO THE LOCALHOST BACKEND');
-        console.log('THE REQUEST BODY IS:', {name, email, password});
-        fetch('http://localhost:8000/auth/register', {
-            method: 'POST',
-            body: JSON.stringify({
-                name,
-                email,
-                password,
-            })
-        }).then((result) => {
-            setData(result);
-            setIsLoading(false);
-            console.log('ON THE CLIENT SIDE, THE RESULT IS:', result);
-        }).catch((err) => {
-            setIsLoading(false);
-            setIsLoading(false)
-            setError(err);
-            console.log('ON THE CLIENT SIDE, THE ERROR IS:', err);
-        });
+        setIsLoading(true);
+        if (validateUserInput()) {
+            fetch('http://localhost:8000/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                })
+            }).then((response) => {
+                response.json();
+            }).then((result) => {
+                console.log('THE RESULT OF THE REQUEST IS:', result);
+                //setData(result.data);
+                setIsLoading(false);
+                console.log('ON THE CLIENT SIDE, THE RESULT IS:', result);
+            }).catch((err) => {
+                setIsLoading(false);
+                setError(err);
+                console.log('ON THE CLIENT SIDE, THE ERROR IS:', err);
+            });
+        }
     }
 
     return (
@@ -50,19 +100,18 @@ export default function SignUp() {
                 </div>
                 <form onSubmit={submitForm} className='column auth-form'>
                     <input onChange={(e)=>setName(e.target.value)} type="text" name='name' placeholder='Enter your name' />
+                    <p className='input-error-text'>{nameError}</p>
                     <input onChange={(e)=>setEmail(e.target.value)} type="email" name='email' placeholder='Enter your email' />
+                    <p className='input-error-text'>{emailError}</p>
                     <input onChange={(e)=>setPassword(e.target.value)} type="password" name='password' placeholder='Enter password' />
-                    <input type="password" name='password2' placeholder='Confirm password' />
+                    <p className='input-error-text'>{passwordError}</p>
+                    <input onChange={(e) => setSecondPassword(e.target.value)} type="password" name='password2' placeholder='Confirm password' />
+                    <p className='input-error-text'>{secondPasswordError}</p>
                     <div className="row-responsive space-between submit-div">
                         <button className='form-button' type="submit" value="SUBMIT">
-                            {/* <Link className='undecorated-text' to={RouteNames.TIMELINE}>
-                                <span>
-                                    SUBMIT
-                                </span>
-                            </Link> */}
                             <span>
-                                    SUBMIT
-                                </span>
+                                SUBMIT
+                            </span>
                         </button>
                         <p className='white-text'>
                             already have an account?
