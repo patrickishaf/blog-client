@@ -3,24 +3,25 @@ import './Post.css';
 import { Link } from 'react-router-dom';
 import RouteNames from '../../../core/utils/route-names';
 
-interface PostProps {
-    title: string;
-    body: string;
-    date: string;
-    author: string;
-    tags: string[];
+export interface PostProps {
+    id: number;
+    title?: string;
+    body?: string;
+    date?: string;
+    author?: string;
+    tags?: string[];
 }
 
 export default function Post(props: PostProps) {
-    const datePartitions = props.date.split(' ');
+    const datePartitions = props.date?.split(' ');
 
     return (
-        <Link className='undecorated-text' to={RouteNames.POST_VIEW}>
+        <Link className='undecorated-text' to={RouteNames.POST_VIEW + `/${props.id}`}>
             <div className='post-root row'>
                 <div className='optional-date-display'>
                     <div className='date-container'>
-                        <p>{datePartitions[0]}</p>
-                        <p>{datePartitions[1].toUpperCase()}</p>
+                        <p>{datePartitions![0]}</p>
+                        <p>{datePartitions![1].toUpperCase()}</p>
                     </div>
                 </div>
                 <div className='post'>
@@ -28,12 +29,12 @@ export default function Post(props: PostProps) {
                     <p className='post-body'>{props.body}</p>
                     <p className='post-author desktop-only'>{props.author}</p>
                     <div className='date-author-row row space-between'>
-                        <p className="post-author white-text">{props.date.toUpperCase()}</p>
+                        <p className="post-author white-text">{props.date?.toUpperCase()}</p>
                         <p className="post-author white-text">{props.author}</p>
                     </div>
                     <div className="chip-row row">
                         {
-                            props.tags.map((tag) => (
+                            props.tags?.map((tag) => (
                                 <Chip text={tag} />
                             ))
                         }

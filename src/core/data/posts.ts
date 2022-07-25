@@ -1,5 +1,6 @@
 const posts = [
     {
+        id: 1,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -7,6 +8,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 2,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -14,6 +16,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 3,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -21,6 +24,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 4,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -28,6 +32,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 5,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -35,6 +40,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 6,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -42,6 +48,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 7,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -49,6 +56,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 8,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -56,6 +64,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 9,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -63,6 +72,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 10,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -70,6 +80,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 11,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -77,6 +88,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 12,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -84,6 +96,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 13,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -91,6 +104,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 14,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -98,6 +112,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 15,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -105,6 +120,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 16,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -112,6 +128,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 17,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -119,6 +136,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 18,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',
@@ -126,6 +144,7 @@ const posts = [
         tags: ['#anarchy', '#silence']
     },
     {
+        id: 19,
         date: '27 may 2022',
         title: '15 Disadvantages Of Freedom And How You Can Workaround It',
         author: '@samurai2099',
@@ -133,6 +152,7 @@ const posts = [
         tags: ['#meditation', '#mentalpeace']
     },
     {
+        id: 20,
         date: '24 may 2022',
         title: 'The Death Of Freedom',
         author: '@samurai2099',

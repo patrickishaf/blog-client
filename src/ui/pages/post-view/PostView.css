@@ -1,11 +1,11 @@
-.bold-first-letter {
-    font-size: 4rem;
-    line-height: 4rem;
-}
-
 .postview-body {
     font-size: 1rem;
     color: var(--color-white);
+}
+
+.postview-body::first-letter {
+    font-size: 4rem;
+    line-height: 4rem;
 }
 
 .postview-metadata {
