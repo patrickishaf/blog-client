@@ -45,6 +45,21 @@ textarea::placeholder {
     font-family: 'Lexend Deca';
 }
 
-textarea::marker {
+textarea::-moz-focus-inner {
     display: none;
+    border: none;
+}
+
+@media only screen and (max-width: 425px) {
+    .create-post-body {
+        margin-top: 1vh;
+    }
+
+    .create-post-form {
+        margin: 8.4vh 5.7vw;
+        color: white;
+    }
+    .create-post-navbar {
+        display: none;
+    }
 }

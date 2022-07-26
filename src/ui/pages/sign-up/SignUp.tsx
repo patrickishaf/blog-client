@@ -57,11 +57,11 @@ export default function SignUp() {
         return false;
     }
 
-    function submitForm(event: FormEvent) {
+    async function submitForm(event: FormEvent) {
         event.preventDefault();
         setIsLoading(true);
         if (validateUserInput()) {
-            fetch('http://localhost:8000/auth/register', {
+            const response = await fetch('http://localhost:8000/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -71,18 +71,9 @@ export default function SignUp() {
                     email,
                     password,
                 })
-            }).then((response) => {
-                response.json();
-            }).then((result) => {
-                console.log('THE RESULT OF THE REQUEST IS:', result);
-                //setData(result.data);
-                setIsLoading(false);
-                console.log('ON THE CLIENT SIDE, THE RESULT IS:', result);
-            }).catch((err) => {
-                setIsLoading(false);
-                setError(err);
-                console.log('ON THE CLIENT SIDE, THE ERROR IS:', err);
             });
+            const data = await response.json();
+            console.log('BLOG CLIENT:: data from API:', data);
         }
     }
 

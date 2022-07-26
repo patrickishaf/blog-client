@@ -2,28 +2,29 @@ import { useState, useEffect, useDebugValue } from 'react';
 
 const useFetch = (url: string) => {
     const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState();
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState({});
+
+    const getData = async (url: string, abortController: AbortController) => {
+        try {
+            const response = await fetch(url, {signal: abortController.signal});
+            const data = await response.json();
+            setIsLoading(false);
+            setData(data);
+        } catch (err) {
+            const error = err as Error;
+            setIsLoading(false);
+            if (error.name === 'AbortError') {
+                console.log('Fetch aborted');
+            } else {
+                setError(error);
+            }
+        }
+    }
 
     useEffect(() => {
         const abortController = new AbortController();
-        setIsLoading(true);
-        fetch(url, {signal: abortController.signal}).then((result) => {
-            console.log('THE RESPONSE IS:', result);
-            result.json();
-        }).then((result) => {
-            console.log('THE RESPONSE TO JSON IS:', result);
-            //setData(result);
-            setIsLoading(false);
-        }).catch((err) => {
-            setIsLoading(false);
-            if(err.name === 'AbortError') {
-                console.log('Fetch aborted');
-            } else {
-                setIsLoading(false);
-                setError(err);
-            }
-        });
+        getData(url, abortController);
     }, [url]);
 
     useDebugValue(data);
