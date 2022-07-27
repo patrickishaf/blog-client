@@ -34,8 +34,8 @@ export default function Post(props: PostProps) {
                     </div>
                     <div className="chip-row row">
                         {
-                            props.tags?.map((tag) => (
-                                <Chip text={tag} />
+                            props.tags?.map((tag, index) => (
+                                <Chip key={index} text={tag} />
                             ))
                         }
                     </div>
