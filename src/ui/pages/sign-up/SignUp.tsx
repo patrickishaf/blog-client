@@ -70,7 +70,7 @@ export default function SignUp() {
                     name,
                     email,
                     password,
-                })
+                }),
             });
             const data = await response.json();
             console.log('BLOG CLIENT:: data from API:', data);
