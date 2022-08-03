@@ -1,7 +1,7 @@
 import { useState, useEffect, useDebugValue } from 'react';
 
-const useFetch = (url: string) => {
-    const [data, setData] = useState<any>();
+const useFetchList = (url: string) => {
+    const [data, setData] = useState<[any]>();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<any | undefined>();
 
@@ -14,12 +14,15 @@ const useFetch = (url: string) => {
                     'Content-Type': 'application/json',
                 },
             });
+            console.log('RESPONSE IN USE_FETCH_LIST', response);
             const data = await response.json();
+            console.log('DATA IN USE_FETCH_LIST:', data);
             setIsLoading(false);
-            setData(data);
+            setData(data.body);
             setError(undefined);
         } catch (err) {
             const error = err as Error;
+            console.log('ERROR IN USE FETCH:', error);
             setIsLoading(false);
             if (error.name === 'AbortError') {
                 console.log('Fetch aborted');
@@ -41,4 +44,4 @@ const useFetch = (url: string) => {
     return { data, isLoading, error };
 }
 
-export default useFetch;
+export default useFetchList;

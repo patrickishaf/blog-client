@@ -1,12 +1,10 @@
 import { useParams } from 'react-router-dom';
-import posts from '../../../core/data/posts';
 import useFetch from '../../../core/hooks/use-fetch';
 import './PostView.css';
 
 export default function PostView() {
     const { id } = useParams();
-    const post = posts[parseInt(id ?? '0')];
-    const { data, isLoading, error} = useFetch(`http://localhost:8000/posts/${id}`);
+    const { data: post, isLoading, error} = useFetch(`${process.env.SERVER_URL}${id}`);
 
     return (
         <div className='postview-root'>

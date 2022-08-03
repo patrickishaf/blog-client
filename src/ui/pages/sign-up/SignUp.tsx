@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import './SignUp.css';
 import bg from '../../../assets/vectors/home-bg.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RouteNames from '../../../core/utils/route-names';
 import Notification from '../../atoms/notification/Notification';
 
@@ -17,6 +17,7 @@ export default function SignUp() {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [secondPasswordError, setSecondPasswordError] = useState('');
+    const navigateTo = useNavigate();
 
     function validateName(): boolean {
         return name.length > 0;
@@ -74,6 +75,9 @@ export default function SignUp() {
             });
             const data = await response.json();
             console.log('BLOG CLIENT:: data from API:', data);
+            if (data.type == 'success') {
+                navigateTo(RouteNames.TIMELINE);
+            }
         }
     }
 

@@ -4,6 +4,7 @@ import bg from '../../../assets/vectors/home-bg.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import RouteNames from '../../../core/utils/route-names';
 import Notification, { NotificationProps } from '../../atoms/notification/Notification';
+import SERVER_URL from '../../../core/utils/config';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -30,15 +31,15 @@ export default function Login() {
     async function submitForm(event: FormEvent) {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/auth/login', {
+            const response = await fetch(`${SERVER_URL}/auth/login`, {
             method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                })
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password,
+            })
             });
             const data = await response.json();
             if (data.type === 'success') {

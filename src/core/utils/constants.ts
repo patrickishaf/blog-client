@@ -1,0 +1,1 @@
+export const UNAUTHENTICATED_USER = 'this user is not authenticated';
