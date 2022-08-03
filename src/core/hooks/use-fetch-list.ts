@@ -14,19 +14,14 @@ const useFetchList = (url: string) => {
                     'Content-Type': 'application/json',
                 },
             });
-            console.log('RESPONSE IN USE_FETCH_LIST', response);
             const data = await response.json();
-            console.log('DATA IN USE_FETCH_LIST:', data);
             setIsLoading(false);
             setData(data.body);
             setError(undefined);
         } catch (err) {
             const error = err as Error;
-            console.log('ERROR IN USE FETCH:', error);
             setIsLoading(false);
-            if (error.name === 'AbortError') {
-                console.log('Fetch aborted');
-            } else {
+            if (error.name !== 'AbortError') {
                 setError(error);
             }
         }

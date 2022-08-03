@@ -5,7 +5,6 @@ import { PostModel } from '../../../core/models/Post';
 import SERVER_URL from '../../../core/utils/config';
 
 export default function Feed() {
-    console.log(SERVER_URL)
     const { data, isLoading, error} = useFetchList(`${SERVER_URL}/posts`);
 
     return (
