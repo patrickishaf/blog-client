@@ -1,7 +1,8 @@
 import { useState, useEffect, useDebugValue } from 'react';
+import { ResponseModel } from '../models/Response';
 
 const useFetch = (url: string) => {
-    const [data, setData] = useState<any>();
+    const [data, setData] = useState<ResponseModel>();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<any | undefined>();
 
@@ -12,18 +13,18 @@ const useFetch = (url: string) => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                 },
             });
             const data = await response.json();
+            const responseModel: ResponseModel = data;
             setIsLoading(false);
-            setData(data);
+            setData(responseModel);
             setError(undefined);
         } catch (err) {
             const error = err as Error;
             setIsLoading(false);
-            if (error.name === 'AbortError') {
-                console.log('Fetch aborted');
-            } else {
+            if (error.name !== 'AbortError') {
                 setError(error);
             }
         }
