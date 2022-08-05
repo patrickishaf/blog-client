@@ -9,6 +9,10 @@
     font-weight: 300;
 }
 
+.create-post-body:focus {
+    outline: none;
+}
+
 .create-post-form {
     margin: 8.4vh 15.7vw;
     color: white;
@@ -29,8 +33,21 @@
     font-size: 2rem;
 }
 
+.create-post-title {
+    outline: none;
+}
+
 .create-post-title::placeholder {
     font-size: 2rem;
+}
+
+#publish-button {
+    border-radius: 48px;
+    padding: 1vh 2vw;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-right: 2vw;
+    cursor: pointer;
 }
 
 textarea {

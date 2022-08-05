@@ -112,6 +112,10 @@ input {
   font-weight: 300;
 }
 
+input:focus {
+  outline: none;
+}
+
 .input-error-text {
   color: red;
   position: relative;

@@ -8,13 +8,6 @@ export default function PostView() {
     const { id } = useParams();
     const { data: post, isLoading, error} = useFetch(`${SERVER_URL}/posts/${id}`);
 
-    useEffect(() => {
-        console.log('POST ID IS:', id);
-        if (error) {
-            console.log('RAN INTO AN ERROR:', error);
-        }
-    }, [id, error]);
-
     return isLoading || error ? <p className='white-text'>{error?.name}</p> : (
         <div className='postview-root'>
             <h1 className='postview-title postview-title'>{post?.body.title}</h1>
