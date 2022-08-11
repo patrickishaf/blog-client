@@ -6,7 +6,12 @@ import './PostView.css';
 
 export default function PostView() {
     const { id } = useParams();
+    console.log('THE ID OF THIS POST IS', id);
     const { data: post, isLoading, error} = useFetch(`${SERVER_URL}/posts/${id}`);
+
+    useEffect(() => {
+        console.log('THE POST IS:', post);
+    }, [post]);
 
     return isLoading || error ? <p className='white-text'>{error?.name}</p> : (
         <div className='postview-root'>

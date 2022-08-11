@@ -1,7 +1,7 @@
 import { AuthorModel } from "./Author";
 
 export interface PostModel {
-    id: number;
+    id: string;
     title?: string;
     body?: string;
     date?: string;

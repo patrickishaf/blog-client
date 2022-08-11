@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import RouteNames from '../../../core/utils/route-names';
 
 export interface PostProps {
-    id: number;
+    id: string;
     title?: string;
     body?: string;
     date?: string;
