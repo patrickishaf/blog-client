@@ -34,7 +34,7 @@ export default function Feed() {
                                     <Post
                                         key={index}
                                         id={post.id}
-                                        date={post.date || 'u u u'}
+                                        date={post.timeCreated || 'u u u'}
                                         title={post.title || ''}
                                         author={post.author?.name || ''}
                                         body={post.body || ''}

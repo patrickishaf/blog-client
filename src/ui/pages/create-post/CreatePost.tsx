@@ -16,7 +16,7 @@ export default function CreatePost() {
         if (postTitle.length === 0 && postBody.length === 0) {
             throw new Error('You can not publish an empty post');
         } else if (postTitle.length === 0) {
-            throw new Error('The title fo your post can not be empty');
+            throw new Error('The title of your post can not be empty');
         } else if (postBody.length === 0) {
             throw new Error('The body of your post can not be empty');
         }

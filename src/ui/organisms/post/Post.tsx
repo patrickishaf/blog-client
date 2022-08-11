@@ -20,8 +20,8 @@ export default function Post(props: PostProps) {
             <div className='post-root row'>
                 <div className='optional-date-display'>
                     <div className='date-container'>
-                        <p>{datePartitions![0]}</p>
-                        <p>{datePartitions![1].toUpperCase()}</p>
+                        <p>{datePartitions![1]}</p>
+                        <p>{datePartitions![2].toUpperCase()}</p>
                     </div>
                 </div>
                 <div className='post'>
@@ -29,7 +29,7 @@ export default function Post(props: PostProps) {
                     <p className='post-body'>{props.body}</p>
                     <p className='post-author desktop-only'>{props.author}</p>
                     <div className='date-author-row row space-between'>
-                        <p className="post-author white-text">{props.date?.toUpperCase()}</p>
+                        <p className="post-author white-text">{`${datePartitions![1]} ${datePartitions![2].toUpperCase()} ${datePartitions![3]}`}</p>
                         <p className="post-author white-text">{props.author}</p>
                     </div>
                     <div className="chip-row row">

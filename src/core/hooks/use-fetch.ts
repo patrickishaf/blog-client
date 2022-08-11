@@ -18,6 +18,7 @@ const useFetch = (url: string) => {
             });
             const data = await response.json();
             const responseModel: ResponseModel = data;
+            console.log('THE RESPONSE DATA IS:', responseModel);
             setIsLoading(false);
             setData(responseModel);
             setError(undefined);

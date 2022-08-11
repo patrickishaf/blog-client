@@ -5,6 +5,7 @@ export interface PostModel {
     title?: string;
     body?: string;
     date?: string;
+    timeCreated?: string,
     author?: AuthorModel;
     tags?: string[];
 }
