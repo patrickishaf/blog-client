@@ -41,6 +41,10 @@
     font-size: 2rem;
 }
 
+.publish-button {
+    display: none;
+}
+
 #publish-button {
     border-radius: 48px;
     padding: 1vh 2vw;
@@ -78,5 +82,21 @@ textarea::-moz-focus-inner {
     }
     .create-post-navbar {
         display: none;
+    }
+
+    .publish-button {
+        display: block;
+        position: fixed;
+        bottom: 2vh;
+        right: 2vw;
+        width: 20vw;
+        height: 20vw;
+        border-radius: 50%;
+        background-color: var(--color-green-fill);
+        padding: 1vh 2vw;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-right: 2vw;
+        cursor: pointer;
     }
 }
