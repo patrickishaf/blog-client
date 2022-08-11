@@ -32,13 +32,15 @@ export default function Post(props: PostProps) {
                         <p className="post-author white-text">{`${datePartitions![1]} ${datePartitions![2].toUpperCase()} ${datePartitions![3]}`}</p>
                         <p className="post-author white-text">{props.author}</p>
                     </div>
-                    <div className="chip-row row">
+                    {
+                        (props.tags?.length !== 0) && <div className="chip-row row">
                         {
                             props.tags?.map((tag, index) => (
                                 <Chip key={index} text={tag} />
                             ))
                         }
-                    </div>
+                        </div>
+                    }
                 </div>
             </div>
         </Link>
