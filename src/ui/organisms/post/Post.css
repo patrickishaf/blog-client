@@ -6,7 +6,7 @@
     display: none;
 }
 
-.date-container p{
+.date-container p {
     font-size: 2rem;
     font-weight: 600;
     color: var(--color-white);
@@ -35,6 +35,7 @@
 .post-root {
     padding-top: 4.6vh;
     padding-bottom: 4.6vh;
+    width: 100%;
 }
 
 .post-root:hover {
