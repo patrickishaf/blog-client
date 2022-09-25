@@ -11,11 +11,11 @@ export default function Feed() {
     const { data, isLoading, error} = useFetch(`${SERVER_URL}/posts`);
     const navigateTo = useNavigate();
 
-    useEffect(() => {
-        if (data?.type === 'error') {
-            navigateTo(RouteNames.LOGIN);
-        }
-    }, [data]);
+    // useEffect(() => {
+    //     if (data?.type === 'error') {
+    //         navigateTo(RouteNames.LOGIN);
+    //     }
+    // }, [data]);
 
     return (
         <main className='feed-root'>

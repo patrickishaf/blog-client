@@ -4,6 +4,7 @@ import bg from '../../../assets/vectors/home-bg.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import RouteNames from '../../../core/utils/route-names';
 import Notification from '../../atoms/notification/Notification';
+import SERVER_URL, { axiosClient } from '../../../core/utils/config';
 
 export default function SignUp() {
     const minimumPasswordLength = 6;
@@ -58,25 +59,46 @@ export default function SignUp() {
         return false;
     }
 
+    // async function submitForm(event: FormEvent) {
+    //     event.preventDefault();
+    //     setIsLoading(true);
+    //     if (validateUserInput()) {
+    //         const response = await fetch('http://localhost:8000/auth/register', {
+    //             method: 'POST',
+    //             credentials: 'include',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Accept': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 name,
+    //                 email,
+    //                 password,
+    //             }),
+    //         });
+    //         console.log('THE RESPONSE IS: ', response);
+    //         const data = await response.json();
+    //         console.log('BLOG CLIENT:: data from API: ', data);
+    //         console.log('THE RESPONSE HEADERS ARE: ', response.headers);
+    //         if (data.type === 'success') {
+    //             navigateTo(RouteNames.TIMELINE);
+    //         }
+    //     }
+    // }
+
     async function submitForm(event: FormEvent) {
         event.preventDefault();
         setIsLoading(true);
         if (validateUserInput()) {
-            const response = await fetch('http://localhost:8000/auth/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    password,
-                }),
-            });
-            const data = await response.json();
-            console.log('BLOG CLIENT:: data from API:', data);
-            if (data.type == 'success') {
-                navigateTo(RouteNames.TIMELINE);
+            try {
+                const responseInterceptor = axiosClient.interceptors.response.use((res: Response) => {
+                    console.log('THE INTERCEPTED RESPONSE OBJECT IS: ', res);
+                });
+                const response = await axiosClient.post('/auth/register', { name, email, password });
+                console.log('THE RESPONSE OBJECT IS: ', response);
+                axiosClient.interceptors.response.eject(responseInterceptor);
+            } catch (err) {
+                console.log('ENCOUNTERED AN ERROR WHILE SIGNING UP: ', err);
             }
         }
     }

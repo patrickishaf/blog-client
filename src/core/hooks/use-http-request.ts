@@ -1,21 +1,29 @@
-import { useState, useEffect, useDebugValue } from 'react';
-import { ResponseModel } from '../models/Response';
+import { useState, useEffect, useDebugValue } from "react";
+import { HttpMethod } from "../@types";
+import { ResponseModel } from "../models/Response";
 
-const useFetch = (url: string) => {
+const useHttpRequest = (url: string, options?: {
+    method?: HttpMethod,
+    headers?: object,
+    body?: object,
+ }) => {
     const [data, setData] = useState<ResponseModel>();
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<any | undefined>();
 
-    const getData = async (url: string, abortController: AbortController) => {
+    const sendHttpRequest = async (url: string, abortController: AbortController) => {
         try {
             const response = await fetch(url, {
                 signal: abortController.signal,
-                method: 'GET',
+                method: options?.method || 'GET',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+                    ...options?.headers
                 },
-                credentials: 'include',
+                body: JSON.stringify(options?.body) || null,
             });
             const data = await response.json();
             const responseModel: ResponseModel = data;
@@ -33,8 +41,8 @@ const useFetch = (url: string) => {
 
     useEffect(() => {
         const abortController = new AbortController();
-        getData(url, abortController);
-    }, [url]);
+        sendHttpRequest(url, abortController);
+    }, [url, options]);
 
     useDebugValue(data);
     useDebugValue(isLoading);
@@ -43,4 +51,4 @@ const useFetch = (url: string) => {
     return { data, isLoading, error };
 }
 
-export default useFetch;
+export default useHttpRequest;

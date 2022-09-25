@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RouteNames from './core/utils/route-names';
 import './index.css';
+import AuthGuard from './ui/guards/AuthGuard';
 import CreatePost from './ui/pages/create-post/CreatePost';
 import Home from './ui/pages/home/Home';
 import Login from './ui/pages/login/Login';
@@ -15,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path={RouteNames.HOME} element={<Home/>} />
+      <Route path={RouteNames.HOME} element={<AuthGuard><Home/></AuthGuard>} />
       <Route path={RouteNames.REGISTER} element={<SignUp/>} />
       <Route path={RouteNames.LOGIN} element={<Login/>} />
       <Route path={RouteNames.TIMELINE} element={<Timeline/>} />

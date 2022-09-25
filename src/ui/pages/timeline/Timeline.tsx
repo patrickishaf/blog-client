@@ -6,7 +6,7 @@ export default function Timeline() {
     return(
         <div className='timeline-root row'>
             <NavDrawer/>
-            <Feed />
+            {/* <Feed /> */}
         </div>
     )
 }

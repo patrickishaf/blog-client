@@ -59,7 +59,7 @@ export default function Login() {
                     type: 'failure' as 'failure',
                     title: 'could not log in',
                     subtitle: 'please connect to the internet and try again',
-                })
+                });
                 showNotification(notificationData);
             } else {
                 setNotificationData({
