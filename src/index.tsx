@@ -21,7 +21,7 @@ root.render(
       <Route path={RouteNames.LOGIN} element={<Login/>} />
       <Route path={RouteNames.TIMELINE} element={<Timeline/>} />
       <Route path={RouteNames.POST_VIEW + '/:id'} element={<PostView/>} />
-      <Route path={RouteNames.CREATE_POST} element={<CreatePost/>} />
+      <Route path={RouteNames.CREATE_POST} element={<AuthGuard><CreatePost/></AuthGuard>} />
     </Routes>
   </BrowserRouter>
 );
